@@ -3,19 +3,22 @@ export const sliderItems = [
         id: 1,
         img: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MX432?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1570119317387",
         title: "Beats Solo3 Wireless Headphones",
-        desc: "EXPERIENCE SUPERIOR SOUND! GET 10% OFF ON ALL NEW PRODUCTS."
+        desc: "EXPERIENCE SUPERIOR SOUND! GET 10% OFF ON ALL NEW PRODUCTS.",
+        bg: "f5fafd"
     },
     {
         id: 2,
         img: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MX422?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1580420173131",
         title: "Beats Studio3 Wireless Headphones : BLACK - RED",
-        desc: "GET THE BEATS DECADE COLLECTION OVER-EAR HEADPHONES IN A SLEEK COLOUR MIX."
+        desc: "GET THE BEATS DECADE COLLECTION OVER-EAR HEADPHONES IN A SLEEK COLOUR MIX.",
+        bg: "fcf1ed"
     },
     {
         id: 3,
         img: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MX412?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1580420170758",
         title: "Beats Studio3 Wireless Headphones : Defiant Red",
-        desc: "WE'VE GOT COLOURS TO FIT EVERY MOOD! GREAT DISCOUNTS AVAILABLE."
+        desc: "WE'VE GOT COLOURS TO FIT EVERY MOOD! GREAT DISCOUNTS AVAILABLE.",
+        bg: "fbf0f4"
     }
 ]
 

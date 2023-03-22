@@ -10,6 +10,9 @@ const Container = styled.div`
     height: 100vh;
     display: flex;
     overflow: hidden;
+    @media only screen and (max-width: 380px) {
+        display: none; 
+    }
 `
 const Arrow = styled.div`
     width: 50px;
@@ -66,7 +69,9 @@ const Desc = styled.p`
 const Button = styled.button`
     padding: 15px 40px;
     font-size: 20px;
-    background-color: transparent;
+    color: white;
+    font-weight: 500;
+    background-color: rgb(39, 44, 44);
     cursor: pointer;
 `
 
@@ -93,7 +98,7 @@ const Slider = () => {
         <Wrapper slideIndex={slideIndex}>
             {sliderItems.map((item) => (
 
-                <Slide>
+                <Slide bg={item.bg} key={item.id}>
                     <ImageContainer>
                         <Image src={item.img} />
                     </ImageContainer>

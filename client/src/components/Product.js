@@ -38,7 +38,7 @@ const Circle = styled.div`
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: white;
+    background-color: white; /*rgb(239, 237, 237);*/
     position: absolute;
 `
 const Image = styled.img`

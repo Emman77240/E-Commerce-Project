@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import PhoneIcon from '@mui/icons-material/Phone';
-import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
-import RoomIcon from '@mui/icons-material/Room';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import FacebookIcon from '@mui/icons-material/Facebook'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import TwitterIcon from '@mui/icons-material/Twitter'
+import PhoneIcon from '@mui/icons-material/Phone'
+import MailOutlinedIcon from '@mui/icons-material/MailOutlined'
+import RoomIcon from '@mui/icons-material/Room'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 
 
 const Container = styled.div`
@@ -13,6 +13,9 @@ const Container = styled.div`
     color: white;
     background-color: black;
     padding: 15% 4%;
+    @media only screen and (max-width: 380px) {
+      flex-direction: column;
+    }
 `
 const Left = styled.div`
     flex: 1;
@@ -25,7 +28,7 @@ const Logo = styled.h1``;
 const Desc = styled.p`
     margin: 30px 0px;
     text-align: justify;
-    line-height: 1.3;
+    line-height: 1.2;
 `
 const SocialContainer = styled.div`
     display: flex;
@@ -46,6 +49,9 @@ const Center = styled.div`
     flex: 1;
     padding: 20px;
     margin-left: 30px;
+    @media only screen and (max-width: 380px) {
+      display: none;
+    }
 `
 const Title = styled.h3`
     margin-bottom: 30px;
@@ -65,6 +71,9 @@ const ListItem = styled.li`
 const Right = styled.div`
     flex: 1;
     padding: 20px;
+    @media only screen and (max-width: 380px) {
+      background-color: #fff8f8; 
+    }
 `
 const ContactItem = styled.div`
     margin-bottom: 20px;
