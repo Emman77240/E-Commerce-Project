@@ -26,17 +26,20 @@ export const categories = [
     {
         id: 1,
         img: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MX3X2?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1580420156213",
-        title: "Over-Ear Headphones"
+        title: "Over-Ear Headphones",
+        cat: "Over-Ear-Headphones"
     },
     {
         id: 2,
         img: "https://media.currys.biz/i/currysprod/M10238756_black?$l-large$&fmt=auto",
-        title: "On-Ear Headphones"
+        title: "On-Ear Headphones",
+        cat: "On-Ear-Headphones"
     },
     {
         id: 3,
         img: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MJ4X3?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1621876626000",
-        title: "Ear Buds Wireless"
+        title: "Ear Buds Wireless",
+        cat: "Ear-Buds"
     }
 ]
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
 
 const Container = styled.div`
@@ -54,6 +55,7 @@ const Button = styled.button`
 const CategoryItem = ({item}) => {
   return (
     <Container>
+      <NavLink to={`/products/${item.cat}`}>
       <Image src={item.img}/>
       <Info>
         <Title>
@@ -61,6 +63,7 @@ const CategoryItem = ({item}) => {
         </Title>
         <Button>Shop Now</Button>
       </Info>
+      </NavLink>
     </Container>
   )
 }
