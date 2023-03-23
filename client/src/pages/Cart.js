@@ -186,7 +186,7 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    const makeRequest = async () => {
+      const makeRequest = async () => {
       try {
         const res = await userRequest.post("/checkout/payment", {
           tokenId: stripeToken.id,
@@ -198,7 +198,7 @@ const Cart = () => {
       } catch {}
     };
     stripeToken && makeRequest();
-  }, [stripeToken, cart.total, history]);
+  }, [stripeToken, cart.total, history]); // eslint-disable-line react-hooks/exhaustive-deps
 
 
   return (

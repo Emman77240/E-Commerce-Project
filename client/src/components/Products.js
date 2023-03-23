@@ -11,7 +11,18 @@ const Container = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
 `
+/*
+const Products = () => {
+  return (
+    <Container>
+      {popularProducts.map((item) => (
+        <Product item={item} key={item.id} />
+      ))}
+    </Container>
+  )
+}
 
+*/
 const Products = ({ cat, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);

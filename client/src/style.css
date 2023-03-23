@@ -1,0 +1,9 @@
+/* NavLink CSS */
+.navigationLink:link {
+    color: black;
+}
+
+.navigationLink:hover {
+    color: black;
+    text-decoration: none;
+}
