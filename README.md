@@ -1,5 +1,5 @@
 # E-Commerce-Project
-![Site Image](public/assets/images/siteImage.png)
+![Site Image](client/public/assets/images/siteImage.png)
 
 
 ## Description
