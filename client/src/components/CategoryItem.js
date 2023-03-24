@@ -1,33 +1,25 @@
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
+import '../style.css'
 
 
-const Container = styled.div`
-    flex: 1;
-    margin: 3px;
-    height: 80vh;
-    position: relative;
-    margin-bottom: 10%;
-`
-const Image = styled.img`
-    width: 90%;
-    height: 70%;
-    object-fit: cover;
-    @media only screen and (max-width: 380px) {
-      height: 50vh;
-    }
-`
 const Info = styled.div`
     position: absolute;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    cursor: pointer;
+
+
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    margin-left: 15%;
     display: flex;
     flex-direction: column;
-    align-items: start;
-    justify-content: end;   
     
     @media only screen and (max-width: 380px) {
       margin-top: 30%;
@@ -37,13 +29,38 @@ const Info = styled.div`
     
     }
 `
+
+const Container = styled.div`
+    flex: 1;
+    margin: 3px;
+    padding-top: 20px;
+    height: 60vh;
+    position: relative;
+    margin-bottom: 10%;
+
+    &:hover ${Info}{
+      opacity: 1;
+    }
+`
+const Image = styled.img`
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    @media only screen and (max-width: 380px) {
+      height: 50vh;
+    }
+    position: absolute;
+`
+
 const Title = styled.h1`
     margin-bottom: 25px;
+
 `
 const Button = styled.button`
     padding: 15px 40px;
     font-size: 20px;
-    background-color: transparent;
+    background-color: white;
+    border: none;
     cursor: pointer;
     margin-left: 4px;
 
@@ -52,18 +69,19 @@ const Button = styled.button`
     }
 `
 
+
 const CategoryItem = ({item}) => {
   return (
     <Container>
-      <NavLink to={`/products/${item.cat}`}>
       <Image src={item.img}/>
       <Info>
-        <Title>
+        <NavLink to={`/products/${item.cat}`} className="navigationTitleLink" >
+          <Title>
             {item.title}
-        </Title>
+          </Title>
+        </NavLink>
         <Button>Shop Now</Button>
       </Info>
-      </NavLink>
     </Container>
   )
 }

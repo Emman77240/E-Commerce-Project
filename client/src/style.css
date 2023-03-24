@@ -7,3 +7,19 @@
     color: black;
     text-decoration: none;
 }
+
+.navigationTitleLink:hover {
+    color: black;
+}
+
+.navigationTitleLink:link {
+    color: white;
+    text-decoration: none;
+}
+
+.navigationTitleLink {
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: large;
+}
