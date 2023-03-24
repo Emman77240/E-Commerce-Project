@@ -8,7 +8,7 @@ const Container = styled.div`
         rgba(255, 255, 255, 0.5),
         rgba(255, 255, 255, 0.5)
     ),
-    url("https://images.pexels.com/photos/6984661/pexels-photo-6984661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+    url("https://buyadvisor.space/wp-content/uploads/2022/06/headphones-for-music.webp")
       center;
     background-size: cover;
     display: flex;
@@ -19,7 +19,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
     width: 40%;
     padding: 20px;
-    background-color: white;
+    background-color: transparent;
     @media only screen and (max-width: 380px) {
       width: 75%
     }
@@ -40,6 +40,7 @@ const Input = styled.input`
     min-width: 40%;
     margin: 20px 10px 0px 0px;
     padding: 10px;
+    border: none;
 `
 
 const Agreement = styled.span`

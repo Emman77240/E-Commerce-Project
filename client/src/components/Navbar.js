@@ -5,6 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import '../style.css'
 
 
 const Container = styled.div`
@@ -98,7 +99,7 @@ const Navbar = () => {
               <MenuItem>SIGN IN</MenuItem>
               <NavLink to="/cart">
               <MenuItem>
-                <Badge badgeContent={quantity} color="secondary">
+                <Badge badgeContent={quantity} className="shoppingBag" color="secondary">
                   <ShoppingBagOutlinedIcon />
                 </Badge>
               </MenuItem>

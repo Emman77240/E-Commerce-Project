@@ -1,20 +1,10 @@
 /* NavLink CSS */
-.navigationLink:link {
+.navigationLink {
     color: black;
 }
 
 .navigationLink:hover {
-    color: black;
-    text-decoration: none;
-}
-
-.navigationTitleLink:hover {
-    color: black;
-}
-
-.navigationTitleLink:link {
-    color: white;
-    text-decoration: none;
+    color: teal;
 }
 
 .navigationTitleLink {
@@ -22,4 +12,15 @@
     font-weight: 500;
     text-transform: uppercase;
     font-size: large;
+    text-decoration: none;
+}
+
+/* Navbar CSS */
+.shoppingBag {
+    color: black;
+}
+
+/* Checkout CSS */
+.checkoutButton {
+    visibility: hidden;
 }

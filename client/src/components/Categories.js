@@ -5,7 +5,10 @@ import CategoryItem from './CategoryItem'
 
 
 // Define styling
+
 const Container = styled.div`
+`
+const ContentContainer = styled.div`
     display: flex;
     padding: 20px;
     justify-content: space-between;
@@ -15,12 +18,23 @@ const Container = styled.div`
     }
 `
 
+const Header = styled.h1`
+    text-align: center;
+    font-size: 45px;
+    margin-top: 50px;
+    margin-bottom: 2%;
+`
+
 const Categories = () => {
   return (
     <Container>
-      {categories.map(item => (
-        <CategoryItem item={item} key={item.id} />
-      ))}
+      <Header>Categories</Header>
+      <ContentContainer>
+      
+        {categories.map(item => (
+          <CategoryItem item={item} key={item.id} />
+        ))}
+    </ContentContainer>
     </Container>
   )
 }

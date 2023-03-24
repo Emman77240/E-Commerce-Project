@@ -11,7 +11,7 @@ const Info = styled.div`
     align-items: center;
     justify-content: center;
     transition: all 0.5s ease;
-    cursor: pointer;
+    
 
 
     top: 0;
@@ -54,6 +54,11 @@ const Image = styled.img`
 
 const Title = styled.h1`
     margin-bottom: 25px;
+    transition: all 0.5s ease;
+    &:hover {
+      color: teal;
+      transform: scale(1.1);
+    }
 
 `
 const Button = styled.button`
@@ -63,6 +68,13 @@ const Button = styled.button`
     border: none;
     cursor: pointer;
     margin-left: 4px;
+    transition: all 0.5s ease;
+
+    &:hover {
+      background-color: teal;
+      color: white;
+      transform: scale(1.1);
+    }
 
     @media only screen and (max-width: 380px) {
       display: none;

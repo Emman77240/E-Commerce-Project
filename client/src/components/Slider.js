@@ -58,7 +58,7 @@ const InfoContainer = styled.div`
     padding: 50px;
 `
 const Title = styled.h1`
-    font-size: 50px;
+    font-size: 55px;
 `
 const Desc = styled.p`
     margin: 40px 0px;
@@ -73,6 +73,13 @@ const Button = styled.button`
     font-weight: 500;
     background-color: rgb(39, 44, 44);
     cursor: pointer;
+    transition: all 0.5s ease;
+
+    &:hover {
+        background-color: white;
+        color: black;
+        transform: scale(1.1);
+    }
 `
 
 // Define Slider function

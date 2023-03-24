@@ -60,6 +60,7 @@ const Icon = styled.div`
 
     &:hover {
         background-color: #e9f5f5;
+        color: teal;
         transform: scale(1.1);
     }
 `

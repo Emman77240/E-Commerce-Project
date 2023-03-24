@@ -5,13 +5,19 @@ import Announcements from "../components/Announcements"
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 import Newsletter from "../components/Newsletter"
+import { useLocation } from 'react-router'
+import { useEffect, useState } from 'react'
+import { publicRequest } from "../requestMethods"
+import { addProduct } from "../redux/cartRedux"
+import { useDispatch } from 'react-redux'
 
 
 
-const Container = styled.div``
+const Container = styled.div`
+`
 
 const Wrapper = styled.div`
-    padding: 50px;
+    padding: 30px;
     display: flex;
     @media only screen and (max-width: 380px) {
       flex-direction: column;
@@ -24,8 +30,8 @@ const ImgContainer = styled.div`
 `
 
 const Image = styled.img`
-    width: 100%;
-    height: 90vh;
+    width: 95%;
+    height: 80vh;
     object-fit: cover;
     @media only screen and (max-width: 380px) {
       height: 40vh;
@@ -42,6 +48,7 @@ const InfoContainer = styled.div`
 
 const Title = styled.h1`
     font-weight: 200;
+    margin-top: 30px;
 `
 
 const Desc = styled.p`
@@ -81,13 +88,13 @@ const FilterColor = styled.div`
     margin: 0px 5px;
     cursor: pointer;
 `
-
+/*
 const FilterSize = styled.select`
     margin-left: 10px;
     padding: 5px;
 `
 
-const FilterSizeOption = styled.option``
+const FilterSizeOption = styled.option``*/
 
 const AddContainer = styled.div`
     width: 50%;
@@ -118,67 +125,82 @@ const Amount = styled.span`
 
 const Button = styled.button`
     padding: 15px;
-    border: 2px solid teal;
-    background-color: white;
+    color: white;
+    background-color: black;
     cursor: pointer;
     font-weight: 500;
-    
+    transition: all 0.5s ease;
+
     &:hover{
-      background-color: #f8f4f4;
+      transform: scale(1.2);
     }
 `
 
 const Product = () => {
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+  const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [color, setColor] = useState(""); 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await publicRequest.get("/products/find/" + id);
+        setProduct(res.data);
+      } catch {}
+    };
+    getProduct();
+  }, [id]);
+
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      quantity > 1 && setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
+
+  const handleClick = () => {
+    dispatch(
+      addProduct({ ...product, quantity, color })
+    );
+  };
   return (
     <Container>
-      <Announcements />
       <Navbar />
+      <Announcements />
       <Wrapper>
         <ImgContainer>
-          <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
+          <Image src={product.img} />
         </ImgContainer>
         <InfoContainer>
-          <Title>Denim Jumpsuit</Title>
-          <Desc>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            venenatis, dolor in finibus malesuada, lectus ipsum porta nunc, at
-            iaculis arcu nisi sed mauris. Nulla fermentum vestibulum ex, eget
-            tristique tortor pretium ut. Curabitur elit justo, consequat id
-            condimentum ac, volutpat ornare.
-          </Desc>
-          <Price>$ 20</Price>
+          <Title>{product.title}</Title>
+          <Desc>{product.desc}</Desc>
+          <Price>£ {product.price}</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              <FilterColor color="black" />
-              <FilterColor color="darkblue" />
-              <FilterColor color="gray" />
-            </Filter>
-            <Filter>
-              <FilterTitle>Size</FilterTitle>
-              <FilterSize>
-                <FilterSizeOption>XS</FilterSizeOption>
-                <FilterSizeOption>S</FilterSizeOption>
-                <FilterSizeOption>M</FilterSizeOption>
-                <FilterSizeOption>L</FilterSizeOption>
-                <FilterSizeOption>XL</FilterSizeOption>
-              </FilterSize>
+              {product.color?.map((c) => (
+                <FilterColor color={c} key={c} onClick={() => setColor(c)} />
+              ))}
             </Filter>
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <RemoveIcon />
-              <Amount>1</Amount>
-              <AddIcon />
+              <RemoveIcon onClick={() => handleQuantity("dec")} />
+              <Amount>{quantity}</Amount>
+              <AddIcon onClick={() => handleQuantity("inc")} />
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+            <Button onClick={handleClick}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
       <Newsletter />
       <Footer />
     </Container>
-  )
+  );
 }
 
 

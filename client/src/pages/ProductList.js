@@ -69,7 +69,7 @@ const ProductList = () => {
     <Container>
       <Navbar />
       <Announcements />
-      <Title>{cat}</Title>
+      <Title>{cat.replace(/-/, " ").replace(/-/, " ")}</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
@@ -80,15 +80,10 @@ const ProductList = () => {
             <Option>red</Option>
             <Option>blue</Option>
             <Option>yellow</Option>
-            <Option>green</Option>
-          </Select>
-          <Select name="size" onChange={handleFilters}>
-            <Option disabled>Size</Option>
-            <Option>XS</Option>
-            <Option>S</Option>
-            <Option>M</Option>
-            <Option>L</Option>
-            <Option>XL</Option>
+            <Option>gold</Option>
+            <Option>pink</Option>
+            <Option>brown</Option>
+            <Option>blended</Option>
           </Select>
         </Filter>
         <Filter>
