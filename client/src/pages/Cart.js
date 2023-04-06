@@ -77,6 +77,7 @@ const Product = styled.div`
     @media only screen and (max-width: 380px) {
       flex-direction: column;
     }
+    margin-bottom: 40px;
 `
 
 const ProductDetail = styled.div`
@@ -105,8 +106,6 @@ const ProductColor = styled.div`
     border-radius: 50%;
     background-color: ${(props) => props.color};
 `
-
-const ProductSize = styled.span``;
 
 const PriceDetail = styled.div`
     flex: 1;
@@ -187,7 +186,7 @@ const Cart = () => {
   const onToken = (token) => {
     setStripeToken(token);
   };
-  console.log(stripeToken);
+
   useEffect(() => {
       const makeRequest = async () => {
       try {
@@ -234,9 +233,6 @@ const Cart = () => {
                       <b>ID:</b> {product._id}
                     </ProductId>
                     <ProductColor color={product.color} />
-                    <ProductSize>
-                      <b>Size:</b> {product.size}
-                    </ProductSize>
                   </Details>
                 </ProductDetail>
                 <PriceDetail>

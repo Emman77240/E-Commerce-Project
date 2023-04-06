@@ -19,7 +19,7 @@ mongoose
     console.log(err);
   });
 
-// Whitelist Client URL
+/* Whitelist Client URL
 const whitelist = ["https://sweet-dragon-9c8740.netlify.app/", "http://localhost:3000"]
 const corsOptions = {
   origin: function(origin, callback) {
@@ -30,10 +30,10 @@ const corsOptions = {
     }
   }, 
   credenials: true
-}
+}*/
 
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);

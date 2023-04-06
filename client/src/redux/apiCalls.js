@@ -1,7 +1,7 @@
 import { loginFailure, loginStart, loginSuccess } from "./userRedux";
 import { publicRequest } from "../requestMethods";
 
-const apiCalls = async (dispatch, user) => {
+export default async function login (dispatch, user) {
   dispatch(loginStart());
   try {
     const res = await publicRequest.post("/auth/login", user);
@@ -11,6 +11,3 @@ const apiCalls = async (dispatch, user) => {
   }
 };
 
-
-
-export default apiCalls

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
+import login from '../redux/apiCalls';
 import { useState } from 'react'
-import apiCalls from '../redux/apiCalls'
 import { useDispatch, useSelector } from 'react-redux'
 
 
@@ -59,7 +59,7 @@ const Button = styled.button`
 const Link = styled.a`
     margin: 5px 0px;
     font-size: 12px;
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
 `
 
@@ -77,7 +77,7 @@ const Login = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    apiCalls(dispatch, { username, password });
+    login(dispatch, { username, password });
   };
 
 
@@ -107,4 +107,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login;
